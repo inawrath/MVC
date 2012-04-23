@@ -1,0 +1,21 @@
+#panelPublicidad{
+    margin-top: 10px;
+}
+#panelPublicidad a{
+    text-decoration: none;
+}
+#panelPublicidad a:hover{
+    cursor: pointer;
+}
+#panelPublicidad a img{
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+}
+#panelPublicidad div{
+    text-align: center;
+    font-family: 'Tangerine';
+    font-size:20px;
+    font-weight: bold;
+}

@@ -1,0 +1,171 @@
+@import "partesFijas/panelSuperior.css";
+@import "partesFijas/panelMenu.css";
+@import "partesFijas/panelPublicidad.css";
+@import "partesFijas/panelInferior.css";
+@import "partesFijas/ingresoModal.css";
+
+body{
+    font-family:"Arial",Georgia,Serif;
+    font-size: 10pt;
+    color: black;
+    text-align: left;
+}
+
+.division1{
+    height: 10px;
+    background-color: #eaeaea;
+}
+/*este es el div que contiene todo lo cambiante*/
+#contenedorPrincipal{
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 20px;
+}
+
+/*Para cargar las imagenes antes de que el usuario abra algo*/
+.oculto{
+    display: none;
+}
+.center{
+    text-align: center;
+}
+.w100{
+    width: 98%;   
+}
+
+
+/* Overlay - fondo de la pantalla modal esto lo pone solo jquery*/
+#simplemodalOverlay {background-color:black; opacity:0.5; cursor:wait;}
+/*este el punto done poner la imagen de cerrado*/
+/*#simplemodal-container a.modalCloseImg {background-image: url('http://pagina.algo/img/cerrar.png');width:25px; height:29px; display:inline; z-index:343535200; position:absolute; top:-15px; right:-16px; cursor:pointer;}*/
+#simplemodalContainer a.modalCloseImg {background-image: url('../../img/cerrar.png');width:25px; height:29px; display:inline; z-index:343535200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+
+/*Clase por defecto para los botones*/
+.boton{
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    margin-right: 5px; 
+    border: 1px solid #dadada;
+    background-color: #eaeaea;
+    padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #343434;
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+}
+.boton:hover{
+    cursor: pointer;
+    color:white;
+    background:#eaeaea;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="eaeaea", endColorstr="9b9b9b"); /* Pour IE seulement et mode gradient à linear */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#9b9b9b));
+    background-image: -moz-linear-gradient(top center, #eaeaea, #9b9b9b);
+    background-image: -o-linear-gradient(top, #eaeaea, #9b9b9b); /*uniquement en mode linear*/
+    /* fondo degradado para Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#eaeaea, endColorstr=#9b9b9b);
+    /* fondo degradado para Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#eaeaea, endColorstr=#9b9b9b)";
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+}
+.botonSeleccionado{
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    color:#ffffff;
+    background:#ffcb2f;
+    border: 1px solid #F0713A;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="ffcb2f", endColorstr="f56b00"); /* Pour IE seulement et mode gradient à linear */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcb2f), to(#f56b00));
+    background-image: -moz-linear-gradient(top center, #ffcb2f, #f56b00);
+    background-image: -o-linear-gradient(top, #ffcb2f, #f56b00); /*uniquement en mode linear*/
+    /* fondo degradado para Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcb2f, endColorstr=#f56b00);
+    /* fondo degradado para Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcb2f, endColorstr=#f56b00)";
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);    
+}
+
+
+/*para las cajas de mensajes*/
+.caja, .cajaInformacion, .cajaCorrecta, .cajaAlertas, .cajaError{
+    clear: both;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-position: 0px 50%;
+    text-align: center;
+    border-radius:5px; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    behavior: url(ie-css3.htc);
+}
+.caja{
+    border: 1px solid #dadada;
+    background-color: #eaeaea;
+    color: #343434;
+}
+
+.cajaInformacion {
+    color: #00529b;
+    background-color: #bde5f8;
+    border-color: #00529b;
+}
+.cajaCorrecta {
+    color: #4f8a10;
+    background-color: #dff2bf;
+    border-color: #4f8a10;
+}
+.cajaAlertas {
+    color: #9f6000;
+    background-color: #feefb3;
+    border-color: #9f6000;
+}
+.cajaError {
+    color: #d8000c;
+    background-color: #ffbaba;
+    border-color: #d8000c;
+}
+
+/*para saber donde se ubica cada cada div*/
+.red,.blue,.yellow,.green,.black,.white{
+    /* margin-top: 10px;*/
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+.black{
+    background-color: black;
+    color:white;
+}
+.white{
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,39 @@
+#panelMenu{
+    margin-top: 10px;
+    height: 168px;
+}
+#panelMenu li{
+    list-style: none; 
+}
+#panelMenu li a{
+    text-decoration: none;
+    width: 120px;
+    margin-left: -10px;
+}
+#panelMenuFijo{
+    position: absolute;
+}
+#panelMenuFijo.fixed {
+    margin-top: 10px;
+    position: fixed;
+    top: -2px;
+}
+
+/*usuario*/
+#panelMenuUsuario{
+    width: 100px;
+    text-align: center;
+    width: 160px;
+    margin-left: 20px;
+    border: 1px solid #dadada;
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#panelMenuUsuario div{
+    margin: 5px;
+    text-align: left;
+}

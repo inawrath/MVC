@@ -1,0 +1,45 @@
+/* Contenedor ingreso modal es el que contiene el formuladio*/
+#contenedorIngresoModal {
+    height:auto; 
+    width:auto; 
+    color:#343434; 
+    background-color: #fafafa; 
+    border: 1px solid #dadada;
+    padding:12px;
+    border-radius:5px; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    behavior: url(ie-css3.htc);
+}
+/* ingreso-modal alertas le doy un porte solo para que aparesca abajo distanciado del contenedor*/
+#ingresoModal #alertas{
+    height: 10px;
+    margin-top: 10px;
+}
+
+.cargando{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    /*background-image: url('http://pagina.algo/img/cargando.gif');*/
+    background-image: url('http://localhost/MVC/img/cargando.gif');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#ingresoModal form table{
+    margin:auto;
+}
+#ingresoModal form input[type=text], #ingresoModal form input[type=password]{
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #dadada;
+    background-color: #eaeaea;
+    padding: 3px;
+    color: #343434;
+    width: 300px;
+    border-radius:3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+}
