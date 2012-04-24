@@ -2,7 +2,7 @@
 
 class index {
 
-    static function main() {
+    static function iniciarPagina() {
         //Incluimos algunas clases
         require 'librerias/php/controlPrincipal.php';
 
@@ -67,7 +67,6 @@ if (!isset($_SESSION['ACCESO'])) {
     $_SESSION['tipo'] = 0;
 }
 
-//inicio la pagina
-index::main();
+index::iniciarPagina();
 
 ?>

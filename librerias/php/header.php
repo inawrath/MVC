@@ -30,14 +30,14 @@ class header {
         $config = config::singleton();
         //incluimos jquery
         $head ="";
-        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaExt") . 'jquery.js"></script>';
+        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaExt") . 'jquery/jquery.js"></script>';
         //incluimos jquery simplemodal para desplegar información en una pantalla modal
-        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaExt") . 'jquery.simplemodal.js"></script>';
+        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaExt") . 'jquery/jquery.simplemodal.js"></script>';
         
         //incluimos los elementos para que funcione 1200grid
-        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . 'reset.css" rel="stylesheet" />';
-        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . 'text.css" rel="stylesheet" />';
-        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . '1200.css" rel="stylesheet" />';
+        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . '1200grid/reset.css" rel="stylesheet" />';
+        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . '1200grid/text.css" rel="stylesheet" />';
+        $head .= '<link href="' . $config->obtenerVariable("carpetaExt") . '1200grid/1200.css" rel="stylesheet" />';
 
         
         //incluimos fons desde http://www.google.com/webfonts
@@ -80,7 +80,7 @@ class header {
         $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaJs") . 'default.js"></script>'; 
         
         //incluimos control de usuarios
-        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaJs") . 'usuarios.js"></script>';
+        $head .= '<script type="text/javascript" src="' . $config->obtenerVariable("carpetaJs") . 'partesFijas/usuarios.js"></script>';
 
         /* funciones de la pagina si es que existen las agregamos */
         $js = "librerias/js/" . $nombrePagina . "Funciones.js";

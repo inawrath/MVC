@@ -5,7 +5,7 @@
         </div>
         <div class="clear"></div>  
         <div class="grid_20">
-            <div id="usuario" class="grid_20 alpha"><?php include 'usuario.php'; ?></div>
+            <div class="grid_20 alpha"><?php include 'usuarios.php'; ?></div>
             <div class="clear"></div>
         </div>
         <div class="clear"></div>

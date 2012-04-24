@@ -4,8 +4,8 @@ $(document).ready(function(){
     
     var msie6 = $.browser == 'msie' && $.browser.version < 7;
     //verifico que exita el div con el botonIngresar - botonRegistro y que el explorar sea distinto de ie6
-    if (!msie6 && $("#botonIngresar").length && $("#botonRegistro").length) {
-        var top = $('#menuUsuario').offset().top - parseFloat($('#menuUsuario').css('margin-top').replace(0, 0));
+    if (!msie6 && $("#botonIngresar").length /*&& $("#botonRegistro").length*/) {
+        var top = $('#botonIngresar').offset().top - parseFloat($('#botonIngresar').css('margin-top').replace(0, 0));
         $(window).scroll(function (event) {
             // obtengo la posicion del scroll
             var y = $(this).scrollTop();
@@ -13,33 +13,14 @@ $(document).ready(function(){
             // si es mayor que la posición del botonIngresar le agrego la clase fixed 
             if (y >= top) {
                 $('#botonIngresar').addClass('fixed');
-                $('#botonRegistro').addClass('fixed');
+                //$('#botonRegistro').addClass('fixed');
             } else {
                 // sino removimos la clase
                 $('#botonIngresar').removeClass('fixed');
-                $('#botonRegistro').removeClass('fixed'); 
+                //$('#botonRegistro').removeClass('fixed'); 
             }
         });
     }
-    //verifico que exita el div menuUsuario y que el explorar distinto de ie6
-    if (!msie6 && $("#sesionIniciada").length) {
-        var top = $('#menuUsuario').offset().top - parseFloat($('#menuUsuario').css('margin-top').replace(0, 0));
-        $(window).scroll(function (event) {
-            // obtengo la posicion del scroll
-            var y = $(this).scrollTop();
-
-            // si es mayor que la posición del botonIngresar le agrego la clase fixed 
-            if (y >= top) {
-                $('#sesionIniciada').addClass('fixed');
-            //$('#botonRegistro').addClass('fixed');
-            } else {
-                // sino removimos la clase
-                $('#sesionIniciada').removeClass('fixed');
-            //$('#botonRegistro').removeClass('fixed'); 
-            }
-        });
-    }
-    
     
     //abrir ingresoModal
     $('#botonIngresar').click(function (e) {
@@ -74,13 +55,13 @@ $(document).ready(function(){
 				
                 $.ajax({
                     type: 'POST',
-                    url: url+'usuario/ingresar',
+                    url: url+'usuarios/ingresar',
                     data: 'usuario=' + $('#usuarioIngresoModal').val() + '&contrasena=' + $('#contrasenaIngresoModal').val(),
                     success:function(msj){
                         //probar resultado que devuelve
-                        //alert(msj);
+                        alert(msj);
                         if ( msj == 1 ){
-                            $('#alertas').html('<div class="cajaCorrecta"></div>');
+                            $('#alertasUsuario').html('<div class="cajaCorrecta"></div>');
                             $('.cajaCorrecta').hide(0).html('Espera un momento&#133;');
                             $('.cajaCorrecta').slideDown(timeSlide);
                             setTimeout(function(){
@@ -89,7 +70,7 @@ $(document).ready(function(){
                             },(timeSlide + 500));
                         }
                         else{
-                            $('#alertas').html('<div class="cajaError"></div>');
+                            $('#alertasUsuario').html('<div class="cajaError"></div>');
                             $('.cajaError').hide(0).html('Lo sentimos, pero los datos son incorrectos');
                             $('.cajaError').slideDown(timeSlide);
                         }
@@ -97,7 +78,7 @@ $(document).ready(function(){
                     },
                     error:function(){
                         $('#cargando').fadeOut(300);
-                        $('#alertas').html('<div class="cajaError"></div>');
+                        $('#alertasUsuario').html('<div class="cajaError"></div>');
                         $('.cajaError').hide(0).html('Ha ocurrido un error durante la ejecución');
                         $('.cajaError').slideDown(timeSlide);
                     }
@@ -105,7 +86,7 @@ $(document).ready(function(){
 				
             }
             else{
-                $('#alertas').html('<div class="cajaError"></div>');
+                $('#alertasUsuario').html('<div class="cajaError"></div>');
                 $('.cajaError').hide(0).html('Los campos estan vacios');
                 $('.cajaError').slideDown(timeSlide);
                 $('#cargando').fadeOut(300);
@@ -120,13 +101,12 @@ $(document).ready(function(){
 	
     $('#salirSession').click(function(){
         $('#cargando').fadeIn(200);
-        $('.sesionIniciada #alertas').html('<div class="cajaCorrecta"></div>');
-        $('.cajaCorrecta').hide(0).html('<img src="'+url+'img/cargando.gif"/> Espera un momento&#133;');
+        $('#alertasUsuario').html('<div class="cajaCorrecta"><img src="'+url+'img/cargando.gif"/> Espera un momento&#133;</div>');
         //$('.cajaCorrecta').slideDown(timeSlide);
         //muestro la cajaCorrecta de salida al estilo modal
-        $('.cajaCorrecta').modal({
+        $('#alertasUsuario').modal({
             /*nombre para el container*/
-            containerId:'modal-tiempo',
+            containerId:'modalTiempo',
             /*funcion de animacion al abrir la cajaCorrecta*/
             onOpen: function (dialog) {
                 dialog.overlay.fadeIn('fast', function () {
@@ -137,7 +117,7 @@ $(document).ready(function(){
             }
         });
         setTimeout(function(){
-            window.location.href = url+"usuario/salir?pagina="+document.URL;
+            window.location.href = url+"usuarios/salir?pagina="+document.URL;
         },2500);
     });	
     

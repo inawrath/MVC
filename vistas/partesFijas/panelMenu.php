@@ -5,12 +5,16 @@
             $usuario = '<div id="panelMenuUsuario">';
             $usuario.='Bienvenido ' . $_SESSION['username'];
             $usuario.=''
-                    . '<div><img src="'.$config->obtenerVariable('url').'img/menuUsuario/panelDeUsuario.png" witdh="16" height="16"/> <a href="'.$config->obtenerVariable('url').'usuario/panel" id="panelDeUsuario">Panel de usuario</a></li></div>'
+                    . '<div><img src="'.$config->obtenerVariable('url').'img/menuUsuario/panelDeUsuario.png" witdh="16" height="16"/> <a href="'.$config->obtenerVariable('url').'usuarios/panel" id="panelDeUsuario">Panel de usuario</a></li></div>'
                     //. '<div><img src="'.$config->obtenerVariable('url').'img/menuUsuario/mensajes.png" witdh="16" height="16"/> <a href="javascript:void(0);" id="mensajes">Mensajes</a></li></div>'
                     . '<div><img src="'.$config->obtenerVariable('url').'img/menuUsuario/salir.png" witdh="16" height="16"/> <a href="javascript:void(0);" id="salirSession">Salir</a></li></div>'
                     . '';
             $usuario.='</div>';
             echo $usuario;
+            ?>
+            <div id="alertasUsuario" class="oculto">
+            </div>
+        <?php
         }
         ?>        <!-- <nav> html5 está diseñado para que aquí este la botonera de navegación principal. Puedes colocar cualquier etiqueta dentro, aunque lo recomendado es usar listas <ul>. -->
         <ul>

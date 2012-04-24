@@ -31,7 +31,7 @@ class autentificacion {
                         break;
                 }
                 break;
-            case 'usuario':
+            case 'usuarios':
                 switch ($nombreAccion) {
                     case 'ingresar':
                         return 1;

@@ -2,7 +2,7 @@
 
 class controlPrincipal {
 
-    static function main($var) {
+    static function main($variablesURL) {
 
         //Incluimos algunas clases
         require 'librerias/php/config.php'; //de configuracion
@@ -18,15 +18,15 @@ class controlPrincipal {
         //Con el objetivo de no repetir nombre de clases, nuestros controladores
         //terminaran todos en controlador. Por ej, la clase controladora inicio, será inicioControlador
         //Formamos el nombre del Controlador o en su defecto, tomamos inicioControlador
-        if (!empty($var['controlador'])) {
-            $nombreControlador = $var['controlador'] . 'Controlador';
+        if (!empty($variablesURL['controlador'])) {
+            $nombreControlador = $variablesURL['controlador'] . 'Controlador';
         } else {
             $nombreControlador = "inicioControlador";
         }
-        print_r($var);
+        print_r($variablesURL);
         //Lo mismo sucede con las acciones, si no hay accion, tomamos inicio como accion
-        if (!empty($var['accion'])) {
-            $nombreAccion = $var['accion'];
+        if (!empty($variablesURL['accion'])) {
+            $nombreAccion = $variablesURL['accion'];
         } else {
             $nombreAccion = "inicio";
         }
@@ -55,17 +55,17 @@ class controlPrincipal {
         if (isset($_SESSION['tipo'])) {
             switch ($_SESSION['tipo']) {
                 case 0:
-                    $permiso = autentificacion::invitado($var);
+                    $permiso = autentificacion::invitado($variablesURL);
                     break;
                 case 1:
-                    $permiso = autentificacion::alumno($var);
+                    $permiso = autentificacion::alumno($variablesURL);
                     break;
                 case 2:
-                    $permiso = autentificacion::profesor($var);
+                    $permiso = autentificacion::profesor($variablesURL);
                     break;
                 case 3:
                     //echo '$permiso';
-                    $permiso = autentificacion::administrador($var);
+                    $permiso = autentificacion::administrador($variablesURL);
                     break;
                 default:
                     break;
@@ -78,11 +78,11 @@ class controlPrincipal {
                 break;
             case 2:
                 //con id
-                $controlador->$nombreAccion($var['id']);
+                $controlador->$nombreAccion($variablesURL['id']);
                 break;
             case 3:
                 //con id y num
-                $controlador->$nombreAccion($var['id'], $var['subId']);
+                $controlador->$nombreAccion($variablesURL['id'], $variablesURL['subId']);
                 break;
             case 4:
                 //error

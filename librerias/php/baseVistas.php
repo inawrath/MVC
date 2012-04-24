@@ -2,10 +2,6 @@
 
 class baseVistas {
 
-    function __construct() {
-        //Traemos una instancia de nuestra clase de configuracion.
-    }
-
     public function desplegar($pagina, $nombre, $variables = array()) {
         //$pagina contendra el nombre de la pagina en la que estamos pr ej: para http://localhost/LAC/aula/curso/ contendra curso
         //$nombre es el nombre de nuestra vista, por ej, listado.php
@@ -23,6 +19,7 @@ class baseVistas {
         }
 
         //Si hay variables para asignar, las pasamos una a una.
+        //aca traspasamos a $algo lo que en el controlador quedo dentro de $data['algo']
         if (is_array($variables)) {
             foreach ($variables as $key => $value) {
                 $$key = $value;
@@ -66,12 +63,6 @@ class baseVistas {
         
         //incluimos el panel inferior
         include $config->obtenerVariable('carpetaVistas') . 'partesFijas/panelInferior.php';
-
-        //incluimos el div de redes-sociles el cual lo haremos aparecer al costado derecho
-        include $config->obtenerVariable('carpetaVistas') . 'partesFijas/redesSociales.php';
-
-        //incluimos el div de imagenes que se precargan
-        include $config->obtenerVariable('carpetaVistas') . 'partesFijas/precargaImagenes.php';
 
         echo '</body>';
         /*         * **************************************** */

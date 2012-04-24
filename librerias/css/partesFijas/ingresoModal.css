@@ -9,7 +9,7 @@
     border-radius:5px; 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    behavior: url(ie-css3.htc);
+    behavior: url(ieCss3.htc);
 }
 /* ingreso-modal alertas le doy un porte solo para que aparesca abajo distanciado del contenedor*/
 #ingresoModal #alertas{
@@ -41,5 +41,5 @@
     border-radius:3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    behavior: url(ie-css3.htc);
+    behavior: url(ieCss3.htc);
 }

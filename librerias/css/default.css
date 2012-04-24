@@ -3,6 +3,7 @@
 @import "partesFijas/panelPublicidad.css";
 @import "partesFijas/panelInferior.css";
 @import "partesFijas/ingresoModal.css";
+@import "partesFijas/usuarios.css";
 
 body{
     font-family:"Arial",Georgia,Serif;
@@ -57,7 +58,7 @@ body{
     border-radius:3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    behavior: url(ie-css3.htc);
+    behavior: url(ieCss3.htc);
 }
 .boton:hover{
     cursor: pointer;
@@ -74,7 +75,7 @@ body{
     border-radius:3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    behavior: url(ie-css3.htc);
+    behavior: url(ieCss3.htc);
 }
 .botonSeleccionado{
     text-decoration: none;
@@ -99,7 +100,7 @@ body{
     border-radius:3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    behavior: url(ie-css3.htc);    
+    behavior: url(ieCss3.htc);   
 }
 
 
@@ -115,7 +116,7 @@ body{
     border-radius:5px; 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    behavior: url(ie-css3.htc);
+    behavior: url(ieCss3.htc);
 }
 .caja{
     border: 1px solid #dadada;
